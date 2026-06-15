@@ -1,0 +1,43 @@
+{
+  "_comment": "Append to an EXISTING upstream IK config (e.g. smplx_to_g1.json). Adjust joint names to match the robot MJCF.",
+  "joint_limit_penalty": {
+    "enabled": true,
+    "base_cost": 0.08,
+    "exp_k": 4.0,
+    "soft_margin_ratio": 0.12,
+    "continuity_decay_threshold": 0.08,
+    "gain": 0.95,
+    "joints": [
+      "left_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_shoulder_yaw_joint",
+      "left_elbow_joint",
+      "right_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_shoulder_yaw_joint",
+      "right_elbow_joint",
+      "left_hip_pitch_joint",
+      "left_knee_joint",
+      "right_hip_pitch_joint",
+      "right_knee_joint"
+    ],
+    "joint_cost_override": {
+      "left_elbow_joint": 0.12,
+      "right_elbow_joint": 0.12
+    }
+  },
+  "temporal_limit_smooth": {
+    "enabled": true,
+    "forward_alpha": 0.35,
+    "backward_alpha": 0.35,
+    "limit_aware": true,
+    "exp_k": 3.0
+  },
+  "_optional_arm_continuity": {
+    "_comment": "Only if you also merge arm_continuity support from local motion_retarget.py",
+    "enabled": false,
+    "default_cost": 0.0,
+    "arm_cost": 6.0,
+    "joint_cost": {}
+  }
+}

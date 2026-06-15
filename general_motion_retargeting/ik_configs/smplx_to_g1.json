@@ -8,14 +8,12 @@
     "human_scale_table": {
         "pelvis": 0.9,
         "spine3": 0.9,
-
         "left_hip": 0.9,
         "right_hip": 0.9,
         "left_knee": 0.9,
         "right_knee": 0.9,
         "left_foot": 0.9,
         "right_foot": 0.9,
-
         "left_shoulder": 0.8,
         "right_shoulder": 0.8,
         "left_elbow": 0.8,
@@ -23,7 +21,6 @@
         "left_wrist": 0.8,
         "right_wrist": 0.8
     },
-
     "ik_match_table1": {
         "pelvis": [
             "pelvis",
@@ -250,7 +247,7 @@
             ]
         ]
     },
-   "ik_match_table2": {
+    "ik_match_table2": {
         "pelvis": [
             "pelvis",
             100,
@@ -282,7 +279,6 @@
                 -0.5637931078484661,
                 -0.4267755048530407
             ]
-
         ],
         "left_knee_link": [
             "left_knee",
@@ -309,7 +305,12 @@
                 0.0,
                 0.0
             ],
-            [ -0.5, 0.5, 0.5, 0.5 ]
+            [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
         ],
         "right_hip_roll_link": [
             "right_hip",
@@ -352,7 +353,12 @@
                 0.0,
                 0.0
             ],
-            [ -0.5, 0.5, 0.5, 0.5 ]
+            [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
         ],
         "torso_link": [
             "spine3",
@@ -466,5 +472,40 @@
                 -1.0
             ]
         ]
+    },
+    "joint_limit_penalty": {
+        "enabled": false,
+        "_comment": "Set enabled true to activate soft limit penalty; see examples/ik_joint_limit_snippet.json",
+        "base_cost": 0.08,
+        "exp_k": 4.0,
+        "soft_margin_ratio": 0.12,
+        "continuity_decay_threshold": 0.08,
+        "gain": 0.95,
+        "joints": [
+            "left_shoulder_pitch_joint",
+            "left_shoulder_roll_joint",
+            "left_shoulder_yaw_joint",
+            "left_elbow_joint",
+            "right_shoulder_pitch_joint",
+            "right_shoulder_roll_joint",
+            "right_shoulder_yaw_joint",
+            "right_elbow_joint",
+            "left_hip_pitch_joint",
+            "left_knee_joint",
+            "right_hip_pitch_joint",
+            "right_knee_joint"
+        ],
+        "joint_cost_override": {
+            "left_elbow_joint": 0.12,
+            "right_elbow_joint": 0.12
+        }
+    },
+    "temporal_limit_smooth": {
+        "enabled": false,
+        "_comment": "Enable for batch bidirectional smoothing via parallel_retarget",
+        "forward_alpha": 0.35,
+        "backward_alpha": 0.35,
+        "limit_aware": true,
+        "exp_k": 3.0
     }
 }
