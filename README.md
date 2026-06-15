@@ -3,7 +3,10 @@
 基于 [General Motion Retargeting (GMR)](https://github.com/YanjieZe/GMR) 的改进 fork，主要解决 **motion retargeting 时关节贴限进入死区、帧间突变（jumping）** 的问题。
 
 > **Upstream:** [YanjieZe/GMR](https://github.com/YanjieZe/GMR) · MIT License  
-> **This fork:** IK soft joint-limit penalty + limit-aware temporal smoothing
+> **This fork:** IK soft joint-limit penalty + limit-aware temporal smoothing  
+> **中文说明:** [README_zh-CN.md](README_zh-CN.md)
+
+> **中文说明:** [README_zh-CN.md](README_zh-CN.md)
 
 ---
 
